@@ -9,7 +9,11 @@ namespace teamhr_api.Repository
         void CreateEmployee(EmployeeEntity newEmployee);
         IEnumerable<EmployeeDto> GetAllEmployees();
 
+        EmployeeDto GetEmployeeById(Guid employeeId);
+
         EmployeeDto UpdateEmployeeById(Guid employeeId, UpdateEmployeeDto updateEmployeeDto);
+
+        void DeleteEmployeeById(Guid employeeId);
     }
     public class EmployeeRepository : IEmployeeRepository
     {
@@ -26,9 +30,26 @@ namespace teamhr_api.Repository
             _dbContext.SaveChanges();
         }
 
+        public void DeleteEmployeeById(Guid employeeId)
+        {
+            var employeeEntity = _dbContext.Employees.Find(employeeId);
+
+            _dbContext.Remove(employeeEntity);
+            _dbContext.SaveChanges();
+        }
+
         public IEnumerable<EmployeeDto> GetAllEmployees()
         {
             return _dbContext.Employees.Select(employees => employees.ExEmployeeDto());
+        }
+
+        public EmployeeDto GetEmployeeById(Guid employeeId)
+        {
+            EmployeeEntity employee = _dbContext.Employees.FirstOrDefault(e => e.EmployeeId == employeeId);
+
+            if (employee == null) return null;
+
+            else return employee.ExEmployeeDto();
         }
 
         public EmployeeDto UpdateEmployeeById(Guid employeeId, UpdateEmployeeDto updateEmployeeDto)
