@@ -2,11 +2,8 @@
 
 namespace teamhr_api.DTOs
 {
-    public record EmployeeDto
+    public record UpdateEmployeeDto
     {
-        [Required]
-        public Guid EmployeeId { get; set; }
-
         [Required]
         public string LastName { get; set; }
 
