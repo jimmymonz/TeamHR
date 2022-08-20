@@ -11,8 +11,8 @@ using TeamHR.Services;
 namespace TeamHR.Migrations
 {
     [DbContext(typeof(TeamHRContext))]
-    [Migration("20220820044614_intialcreate")]
-    partial class intialcreate
+    [Migration("20220820070400_initialcreate")]
+    partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
