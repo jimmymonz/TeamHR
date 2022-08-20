@@ -40,5 +40,13 @@ namespace teamhr_api.Controllers
             var employees = _employeeRepository.GetAllEmployees();
             return Ok(employees);
         }
+
+        [HttpPatch("employee/{employeeId}")]
+        public ActionResult<EmployeeDto> PatchEmployeeByEmployeeId([FromRoute] Guid employeeId, [FromBody] UpdateEmployeeDto updateStoreDto)
+        {
+            var updatedEmployee = _employeeRepository.UpdateEmployeeById(employeeId, updateStoreDto);
+            if (updatedEmployee == null) return NotFound();
+            return Ok(updatedEmployee);
+        }
     }
 }

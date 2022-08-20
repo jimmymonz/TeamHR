@@ -2,7 +2,7 @@
 
 namespace teamhr_api.DTOs
 {
-    public class CreateEmployeeDto
+    public record CreateEmployeeDto
     {
         [Required]
         public string LastName { get; set; }
