@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "teamhr-api/1.0.0": {
+      "TeamHR-API/1.0.0": {
         "dependencies": {
           "FluentValidation.AspNetCore": "10.4.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "6.0.4",
@@ -17,7 +17,7 @@
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
-          "teamhr-api.dll": {}
+          "TeamHR-API.dll": {}
         }
       },
       "FluentValidation/10.4.0": {
@@ -442,7 +442,7 @@
     }
   },
   "libraries": {
-    "teamhr-api/1.0.0": {
+    "TeamHR-API/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
