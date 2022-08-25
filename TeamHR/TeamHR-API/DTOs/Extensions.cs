@@ -12,6 +12,7 @@ namespace teamhr_api.DTOs
                 FirstName = employeeEntity.FirstName,
                 LastName = employeeEntity.LastName,
                 PhoneNumber = employeeEntity.PhoneNumber,
+                Email = employeeEntity.Email,
                 Location = employeeEntity.Location
             };
         }
