@@ -17,6 +17,25 @@ namespace teamhr_api.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.4");
 
+            modelBuilder.Entity("teamhr_api.DAO.DepartmentEntity", b =>
+                {
+                    b.Property<Guid>("DepartmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DepartmentDescription")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DepartmentName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("DepartmentId");
+
+                    b.ToTable("Departments");
+                });
+
             modelBuilder.Entity("teamhr_api.DAO.EmployeeEntity", b =>
                 {
                     b.Property<Guid>("EmployeeId")
