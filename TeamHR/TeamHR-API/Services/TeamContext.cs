@@ -6,6 +6,7 @@ namespace teamhr_api.Services
     public class TeamContext : DbContext
     {
         public DbSet<EmployeeEntity> Employees { get; set; }
+        public DbSet<DepartmentEntity> Departments { get; set; }
         public string DbPath { get; }
 
         public TeamContext()
