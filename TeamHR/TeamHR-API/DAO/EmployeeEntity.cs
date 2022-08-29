@@ -19,5 +19,6 @@ namespace teamhr_api.DAO
 
         public string Location { get; set; }
 
+        public DepartmentEntity Department { get; set; }
     }
 }
