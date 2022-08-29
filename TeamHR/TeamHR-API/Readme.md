@@ -1,6 +1,6 @@
 ﻿### Inital DB
 Run:
-'dotnet too install -- global dotnet-ef'
+'dotnet tool install -- global dotnet-ef'
 'dotnet ef migrations add initialcreate'
 
 ### Update DB
