@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using teamhr_api.DAO;
 using teamhr_api.DTOs;
 using teamhr_api.Repository;
 
@@ -16,12 +15,11 @@ namespace teamhr_api.Controllers
             _employeeRepository = employeeRepository;
         }
 
-        [HttpPost("employee")]
-        public ActionResult<EmployeeDto> PostNewEmployee([FromBody] CreateEmployeeDto createEmployeeDto)
+        [HttpPost("employee/{departmentId}")]
+        public ActionResult<EmployeeDto> PostNewEmpolyeeByDepartmentId([FromRoute] Guid departmentId, [FromBody] CreateEmployeeDto createEmployeeDto)
         {
-            EmployeeEntity newEmployee = new()
+            EmployeeDto newEmployee = new()
             {
-                EmployeeId = Guid.NewGuid(),
                 FirstName = createEmployeeDto.FirstName,
                 LastName = createEmployeeDto.LastName,
                 PhoneNumber = createEmployeeDto.PhoneNumber,
@@ -29,9 +27,11 @@ namespace teamhr_api.Controllers
                 Location = createEmployeeDto.Location,
             };
 
-            _employeeRepository.CreateEmployee(newEmployee);
+            EmployeeDto result = _employeeRepository.AddEmpByDepId(departmentId, newEmployee);
 
-            return Created("GetEmployeeByEmployeeId", newEmployee.ExEmployeeDto());
+            if (result == null) return NotFound();
+
+            else return Created("GetEmployeeByEmployeeId", result);
         }
 
         [HttpGet("employees")]

@@ -13,6 +13,6 @@ namespace teamhr_api.DAO
         [Required]
         public string DepartmentDescription { get; set; }
 
-        public List<EmployeeEntity> Employees { get; set; }
+        public List<EmployeeEntity> Employees { get; set; } = new List<EmployeeEntity>();
     }
 }
