@@ -14,5 +14,18 @@ namespace teamhr_api.Services
                 DepartmentDescription = departmentEntity.DepartmentDescription
             };
         }
+
+        public static EmployeeDto ExtEmployeeDto(this EmployeeEntity employee)
+        {
+            return new EmployeeDto
+            {
+                EmployeeId = employee.EmployeeId,
+                FirstName = employee.FirstName,
+                LastName = employee.LastName,
+                PhoneNumber = employee.PhoneNumber,
+                Email = employee.Email,
+                Location = employee.Location,
+            };
+        }
     }
 }
