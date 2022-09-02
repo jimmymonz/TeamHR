@@ -30,4 +30,4 @@ jobs:
         run: dotnet restore
 
       - name: Build
-        run: dotnet build -- configuration Releas --no-restore
+        run: dotnet build --configuration Releas --no-restore
