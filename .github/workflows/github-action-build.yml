@@ -35,4 +35,4 @@ jobs:
         run: dotnet build TeamHR/TeamHR-API/TeamHR-API.sln --no-restore
 
       - name: Test
-        run: dotnet test TeamHR/TeamHR-API/TeamHR-API.sIn
+        run: dotnet test TeamHR/TeamHR-API/TeamHR-API.sIn --no-restore
