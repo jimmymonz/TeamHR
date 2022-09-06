@@ -16,15 +16,17 @@ namespace teamhr_api.Repository
     public class DepartmentRepository : IDepartmentRepository
     {
         private readonly TeamContext _dbContext;
-        public IEnumerable<DepartmentDto> GetAllDepartments()
-        {
-            return _dbContext.Departments.Select(Departments => Departments.ExtDepartmentDto());
-        }
 
         public DepartmentRepository(TeamContext teamContext)
         {
             _dbContext = teamContext;
         }
+
+        public IEnumerable<DepartmentDto> GetAllDepartments()
+        {
+            return _dbContext.Departments.Select(Departments => Departments.ExtDepartmentDto());
+        }
+
         public DepartmentDto GetDepartmentById(Guid departmentId)
         {
             DepartmentEntity result = _dbContext.Departments.FirstOrDefault(x => x.DepartmentId == departmentId);
@@ -35,7 +37,7 @@ namespace teamhr_api.Repository
 
         public void CreateDeparment(DepartmentEntity newDepartment)
         {
-            var department = _dbContext.Departments.Add(newDepartment);
+            _dbContext.Departments.Add(newDepartment);
             _dbContext.SaveChanges();
         }
 

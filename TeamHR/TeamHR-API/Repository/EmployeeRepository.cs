@@ -61,7 +61,7 @@ namespace teamhr_api.Repository
 
         public IEnumerable<EmployeeDto> GetAllEmployees()
         {
-            return _dbContext.Employees.Select(employees => employees.ExEmployeeDto());
+            return _dbContext.Employees.Select(employees => employees.ExtEmployeeDto());
         }
 
         public EmployeeDto GetEmployeeById(Guid employeeId)
@@ -70,7 +70,7 @@ namespace teamhr_api.Repository
 
             if (employee == null) return null;
 
-            else return employee.ExEmployeeDto();
+            else return employee.ExtEmployeeDto();
         }
 
         public EmployeeDto UpdateEmployeeById(Guid employeeId, UpdateEmployeeDto updateEmployeeDto)
@@ -93,7 +93,7 @@ namespace teamhr_api.Repository
 
                 _dbContext.SaveChanges();
 
-                return employeeEntity.ExEmployeeDto() with
+                return employeeEntity.ExtEmployeeDto() with
                 {
                     FirstName = employeeEntity.FirstName,
                     LastName = employeeEntity.LastName,

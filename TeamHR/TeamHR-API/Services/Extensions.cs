@@ -15,16 +15,16 @@ namespace teamhr_api.Services
             };
         }
 
-        public static EmployeeDto ExtEmployeeDto(this EmployeeEntity employee)
+        public static EmployeeDto ExtEmployeeDto(this EmployeeEntity employeeEntity)
         {
             return new EmployeeDto
             {
-                EmployeeId = employee.EmployeeId,
-                FirstName = employee.FirstName,
-                LastName = employee.LastName,
-                PhoneNumber = employee.PhoneNumber,
-                Email = employee.Email,
-                Location = employee.Location,
+                EmployeeId = employeeEntity.EmployeeId,
+                FirstName = employeeEntity.FirstName,
+                LastName = employeeEntity.LastName,
+                PhoneNumber = employeeEntity.PhoneNumber,
+                Email = employeeEntity.Email,
+                Location = employeeEntity.Location,
             };
         }
     }
