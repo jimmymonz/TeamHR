@@ -6,3 +6,7 @@ mobi
 .vs
 /TeamHR/TeamHR-API/obj/Debug/net6.0
 /TeamHR/TeamHR-API/obj
+/TeamHR/TeamhrTest/obj
+/TeamHR/TeamhrUnitTests/bin/Debug/net6.0
+/TeamHR/TeamhrUnitTests/obj
+/TeamHR/TestTeamhr.UnitTests/obj/Debug

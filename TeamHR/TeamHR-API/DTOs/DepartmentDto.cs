@@ -8,7 +8,6 @@ namespace teamhr_api.DTOs
         public Guid DepartmentId { get; set; }
 
         [Required]
-
         public string DepartmentName { get; set; }
 
         [Required]
