@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "teamhr-api", "teamhr-api.csproj", "{52C09CCD-D8A0-48A7-8C9B-936556037ED5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamhrUnitTests", "..\TeamhrUnitTests\TeamhrUnitTests.csproj", "{17BA4FE5-EB7C-410F-BCD8-A205CEBCFAEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamhrUnitTests", "..\TeamhrUnitTests\TeamhrUnitTests.csproj", "{17BA4FE5-EB7C-410F-BCD8-A205CEBCFAEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

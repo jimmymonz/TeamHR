@@ -1,4 +1,5 @@
 using teamhr_api.DAO;
+using teamhr_api.DTOs;
 using teamhr_api.Services;
 
 namespace TeamhrUnitTests
@@ -10,9 +11,17 @@ namespace TeamhrUnitTests
         public void ExtDepartmentDtoTest()
         {
             // Arrange
+            var mockDepartmentId = Guid.NewGuid();
+            var mockDepartmentDto = new DepartmentDto
+            {
+                DepartmentId = mockDepartmentId,
+                DepartmentName = "Operations",
+                DepartmentDescription = "Department for the operations of the compay."
+            };
+
             var departmentEntity = new DepartmentEntity
             {
-                DepartmentId = Guid.NewGuid(),
+                DepartmentId = mockDepartmentId,
                 DepartmentName = "Operations",
                 DepartmentDescription = "Department for the operations of the compay."
             };
@@ -21,9 +30,7 @@ namespace TeamhrUnitTests
             var departmentDto = departmentEntity.ExtDepartmentDto();
 
             // Assert
-            Assert.AreEqual(departmentEntity.DepartmentId, departmentDto.DepartmentId);
-            Assert.AreEqual(departmentEntity.DepartmentName, departmentDto.DepartmentName);
-            Assert.AreEqual(departmentEntity.DepartmentDescription, departmentDto.DepartmentDescription);
+            Assert.AreEqual(mockDepartmentDto, departmentDto);
         }
     }
 }
