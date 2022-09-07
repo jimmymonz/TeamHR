@@ -1,4 +1,5 @@
 ﻿using teamhr_api.DAO;
+using teamhr_api.DTOs;
 using teamhr_api.Services;
 
 namespace TeamhrUnitTests
@@ -10,9 +11,20 @@ namespace TeamhrUnitTests
         public void ExtEmployeeDtoTests()
         {
             // Arrange
+            var mockEmployeeId = Guid.NewGuid();
+            var mockEmployeeDto = new EmployeeDto
+            {
+                EmployeeId = mockEmployeeId,
+                FirstName = "James",
+                LastName = "Lee",
+                PhoneNumber = "021727928234",
+                Email = "james.lee@teamhr.co.nz",
+                Location = "Auckland"
+            };
+
             var employeeEntity = new EmployeeEntity
             {
-                EmployeeId = Guid.NewGuid(),
+                EmployeeId = mockEmployeeId,
                 FirstName = "James",
                 LastName = "Lee",
                 PhoneNumber = "021727928234",
@@ -23,12 +35,7 @@ namespace TeamhrUnitTests
             var employeeDto = employeeEntity.ExtEmployeeDto();
 
             // Assert
-            Assert.AreEqual(employeeEntity.EmployeeId, employeeDto.EmployeeId);
-            Assert.AreEqual(employeeEntity.FirstName, employeeDto.FirstName);
-            Assert.AreEqual(employeeEntity.LastName, employeeDto.LastName);
-            Assert.AreEqual(employeeEntity.PhoneNumber, employeeDto.PhoneNumber);
-            Assert.AreEqual(employeeEntity.Email, employeeDto.Email);
-            Assert.AreEqual(employeeEntity.Location, employeeDto.Location);
+            Assert.AreEqual(mockEmployeeDto, employeeDto);
         }
     }
 }
