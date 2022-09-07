@@ -12,4 +12,6 @@ mobi
 /TeamHR/TestTeamhr.UnitTests/obj/Debug
 TeamHR/TeamHR-API/bin/Debug/net6.0/teamhr-api.dll
 TeamHR/TeamHR-API/bin/Debug/net6.0/teamhr-api.pdb
-.gitignore
+TeamHR/TeamHR-API/bin
+TeamHR/TeamhrUnitTests/bin
+TeamHR/TeamhrUnitTests/TestResults
