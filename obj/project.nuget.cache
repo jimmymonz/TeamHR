@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "5xdrbeuJQu5I+FLqdlS9S1Lp6q/dxGLrPL1UZ02OpyAKTwochmv49eyqajSOuQbU4HvPsuFgNOt+Hh1XbkE98w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Jim\\git\\teamhr\\build.proj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jim\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "C:\\Users\\Jim\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net45\\1.0.2\\microsoft.netframework.referenceassemblies.net45.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

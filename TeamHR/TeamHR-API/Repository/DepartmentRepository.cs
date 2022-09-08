@@ -29,10 +29,8 @@ namespace teamhr_api.Repository
 
         public DepartmentDto GetDepartmentById(Guid departmentId)
         {
-            DepartmentEntity result = _dbContext.Departments.FirstOrDefault(x => x.DepartmentId == departmentId);
-
-            if (result == null) return null;
-            else return result.ExtDepartmentDto();
+            var result = _dbContext.Departments.Where(x => x.DepartmentId == departmentId).SingleOrDefault();
+            return result.ExtDepartmentDto();
         }
 
         public void CreateDeparment(DepartmentEntity newDepartment)
@@ -43,22 +41,18 @@ namespace teamhr_api.Repository
 
         public DepartmentDto UpdateDepartmentById(Guid departmentId, UpdateDepartmentDto updateDepartmentDto)
         {
-            var crDepartmentEntity = _dbContext.Departments.Find(departmentId);
+            var findDepartment = _dbContext.Departments.Find(departmentId);
 
-            if (crDepartmentEntity == null) return null;
+            if (findDepartment == null) return null;
             else
             {
-                if (updateDepartmentDto.DepartmentName != null) crDepartmentEntity.DepartmentName = updateDepartmentDto.DepartmentName;
+                if (updateDepartmentDto.DepartmentName != null) findDepartment.DepartmentName = updateDepartmentDto.DepartmentName;
 
-                if (updateDepartmentDto.DepartmentDescription != null) crDepartmentEntity.DepartmentDescription = updateDepartmentDto.DepartmentDescription;
+                if (updateDepartmentDto.DepartmentDescription != null) findDepartment.DepartmentDescription = updateDepartmentDto.DepartmentDescription;
 
                 _dbContext.SaveChanges();
 
-                return crDepartmentEntity.ExtDepartmentDto() with
-                {
-                    DepartmentName = crDepartmentEntity.DepartmentName,
-                    DepartmentDescription = crDepartmentEntity.DepartmentDescription,
-                };
+                return findDepartment.ExtDepartmentDto();
             }
         }
 

@@ -2,7 +2,7 @@
 
 namespace teamhr_api.DTOs
 {
-    public record CreateDepartmentDto
+    public class CreateDepartmentDto
     {
         [Required]
         public string DepartmentName { get; set; }

@@ -8,7 +8,7 @@ namespace teamhr_api.Controllers
 {
     [Route("api/")]
     [ApiController]
-    public class DepartmentController : Controller
+    public class DepartmentController : ControllerBase
     {
         private IDepartmentRepository _departmentRepository;
 
@@ -31,7 +31,7 @@ namespace teamhr_api.Controllers
 
             var department = _departmentRepository.GetDepartmentById(departmentId);
 
-            if (department == null) return NotFound();
+            if (department is null) return NotFound();
             else return Ok(department);
         }
         [HttpPost("department")]
