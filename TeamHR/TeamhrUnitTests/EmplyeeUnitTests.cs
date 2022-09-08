@@ -4,10 +4,9 @@ using teamhr_api.Services;
 
 namespace TeamhrUnitTests
 {
-    [TestClass]
     public class EmplyeeUnitTests
     {
-        [TestMethod]
+        [Fact]
         public void ExtEmployeeDtoTests()
         {
             // Arrange
@@ -35,7 +34,7 @@ namespace TeamhrUnitTests
             var employeeDto = employeeEntity.ExtEmployeeDto();
 
             // Assert
-            Assert.AreEqual(mockEmployeeDto, employeeDto);
+            Assert.Equal(mockEmployeeDto, employeeDto);
         }
     }
 }

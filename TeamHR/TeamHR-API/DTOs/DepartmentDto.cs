@@ -2,7 +2,7 @@
 
 namespace teamhr_api.DTOs
 {
-    public record DepartmentDto
+    public class DepartmentDto
     {
         [Required]
         public Guid DepartmentId { get; set; }
