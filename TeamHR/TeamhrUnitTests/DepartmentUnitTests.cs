@@ -51,6 +51,7 @@ namespace TeamhrUnitTests
         }
 
         [Fact]
+        // Naming convention: UnitOfWork_StateUnderTest_ExpectedBehaviour
         public void GetDepartmentById_WithExistentDepartment_ReturnsExpectedDepartment()
         {
             // Arrange
@@ -68,7 +69,6 @@ namespace TeamhrUnitTests
         }
 
         [Fact]
-        // Naming convention: UnitOfWork_StateUnderTest_ExpectedBehaviour
         public void GetDepartmentById_WithNonExistentDepartment_ReturnsNotFound()
         {
             // Arrange
