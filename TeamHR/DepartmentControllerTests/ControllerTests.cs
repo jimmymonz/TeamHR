@@ -43,7 +43,7 @@ namespace TeamhrIntegrationTests
         {
             // Arrange
 
-            // Act
+            // Actkjghjhjg
             var response = await _testfixture.TestClient.GetAsync("api/departments");
 
             // Assert
