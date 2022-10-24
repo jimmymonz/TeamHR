@@ -15,3 +15,5 @@ TeamHR/TeamHR-API/bin/Debug/net6.0/teamhr-api.pdb
 TeamHR/TeamHR-API/bin
 TeamHR/TeamhrUnitTests/bin
 TeamHR/TeamhrUnitTests/TestResults
+/TeamHR/DepartmentControllerTests/obj
+/TeamHR/DepartmentControllerTests/bin/Debug/net6.0

@@ -31,7 +31,7 @@ namespace teamhr_api.Controllers
 
             var department = _departmentRepository.GetDepartmentById(departmentId);
 
-            if (department is null) return NotFound();
+            if (department == null) return NotFound();
             else return Ok(department);
         }
         [HttpPost("department")]

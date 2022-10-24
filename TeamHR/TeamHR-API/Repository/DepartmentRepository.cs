@@ -29,7 +29,7 @@ namespace teamhr_api.Repository
 
         public DepartmentDto GetDepartmentById(Guid departmentId)
         {
-            var result = _dbContext.Departments.Where(x => x.DepartmentId == departmentId).SingleOrDefault();
+            var result = _dbContext.Departments.Where(x => x.DepartmentId == departmentId).Single();
             return result.ExtDepartmentDto();
         }
 
